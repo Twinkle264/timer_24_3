@@ -26,11 +26,12 @@ int main() {
             } else {
                 timer.tm_sec -= 1;
             }
-            cout << put_time(&timer, "%M:%S") << endl;
+            cout << "\r" << put_time(&timer, "%M:%S") << flush;
             time_t t_now = time(nullptr);
             current_time = *localtime(&t_now);
         }
     }
-    cout << "DING! DING! DING!";
+
+    cout << "\r" << "DING! DING! DING!";
     return 0;
 }
